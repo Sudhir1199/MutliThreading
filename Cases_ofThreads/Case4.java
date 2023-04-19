@@ -1,3 +1,6 @@
+// If we are not ovverriding run() method then Thread class run() method will be executed 
+// which has empty implementation and hence we won't get any output
+
 
 class MyThread extends Thread{
 	
