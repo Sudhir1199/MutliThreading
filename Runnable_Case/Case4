@@ -1,0 +1,55 @@
+//No new Thread will be created and MyRunnable run() method will be executed just like 
+a normal method call.
+
+
+
+class MyRunnable implements Runnable {
+	public void run() {
+		for(int i = 0; i<5; i++) {
+			System.out.println("Run method");
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+	}
+	
+}
+public class Case1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyRunnable r = new MyRunnable();
+		Thread t = new Thread(r);
+		t.run();
+		
+		for(int i = 0; i<5; i++) {
+			System.out.println("Main method");
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		
+	}
+
+}
+
+
+
+
+Run method
+Run method
+Run method
+Run method
+Run method
+Main method
+Main method
+Main method
+Main method
+Main method
