@@ -1,3 +1,7 @@
+//We can overload run() method but Thread class start() method always invokes
+// no argument run() method, the other overload run() methods we have to call explicitly
+// then only it will be executed just like normal method.
+
 
 class MyThread extends Thread{
 	public void run() {
@@ -21,3 +25,6 @@ public class Case5 {
 	}
 
 }
+
+//o/p:- int arg method
+//      int arg method
