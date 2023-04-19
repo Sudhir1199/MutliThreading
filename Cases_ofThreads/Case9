@@ -1,0 +1,9 @@
+//After starting a Thread we are not allowed to restart the same Thread once again
+//otherwise we will get runtime exception saying "IllegalThreadStateException".
+
+//ex:-
+
+MyThread t = new MyThread();
+t.start();//valid
+//........
+t.start();//Runtime error
