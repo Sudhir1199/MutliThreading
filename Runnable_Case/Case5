@@ -1,0 +1,12 @@
+Case 5: r.start():-
+
+
+
+We will get compile time error saying start()method is not available in MyRunnable 
+class. 
+Output:
+Compile time error
+E:\SCJP>javac ThreadDemo.java
+ThreadDemo.java:18: cannot find symbol
+Symbol: method start()
+Location: class MyRunnable
