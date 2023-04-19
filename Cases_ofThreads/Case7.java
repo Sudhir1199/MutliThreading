@@ -1,3 +1,11 @@
+//here we use super.start() which calls Parent Thread class start() method
+// which invokes zero paramether run() method by default 
+
+____> main thread_____> main thread, Start Threa
+                 ______>run thread(child thread)
+
+
+
 
 class MyThread extends Thread{
 	@Override
@@ -27,3 +35,4 @@ public class Case7 {
 	}
 
 }
+
