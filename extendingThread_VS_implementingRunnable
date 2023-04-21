@@ -1,0 +1,10 @@
+Amond the two ways between "Extends Thread" and "Implements Runnable", "Implements Runnable"
+always Prefferable recommended as:-
+                In "Extends Thread" our class mandatorily extends Thread class and there is
+                no chance pf extending other classes as we can perform multiple inheritance 
+                using "extends" with this we also missing the benifits of inheritance
+                
+                
+                But in "Implements Runnable" we can implements and extends multiple classes
+                and also perform multiple inheritance. Hence, implements Runnable is
+                recommended to define Thread.
