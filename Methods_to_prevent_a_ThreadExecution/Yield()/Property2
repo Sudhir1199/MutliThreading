@@ -1,0 +1,40 @@
+//the thread will execution after and before yield() depends on Thread priority
+//high priority executes first and ends first but its depends on OS mostly because OS like Windows doesnot provide proper support for Thread priority
+
+OS :- Windows 10
+
+class MyThread1 extends Thread{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Started "+Thread.currentThread());
+		Thread.yield();
+		
+		System.out.println("Ended "+Thread.currentThread());
+	}
+}
+
+
+public class yield_preventExecution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyThread1 t1 = new MyThread1();
+		MyThread1 t2 = new MyThread1();
+		
+		t1.setPriority(3);
+		t2.setPriority(8);
+		
+		
+		t1.start();
+		t2.start();
+		
+		
+	}
+
+}
+o/p:-
+Started Thread[Thread-0,3,main]
+Started Thread[Thread-1,8,main]    -----As u can see windows are not supporting Thread priority
+Ended Thread[Thread-1,8,main]
+Ended Thread[Thread-0,3,main]
