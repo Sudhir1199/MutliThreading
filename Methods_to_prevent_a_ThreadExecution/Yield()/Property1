@@ -41,3 +41,9 @@ Started Thread[Thread-0,5,main]
 Started Thread[Thread-1,5,main]      // Thread-2 start first and after yield() it ends last
 Ended Thread[Thread-1,5,main]
 Ended Thread[Thread-0,5,main]
+
+
+Here, we create two threads, t1 and t2, that execute the run() method in YieldDemo Class.
+As we can observe from the output, thread t1 start executing first. When the yield() method is invoked, thread t1 goes to the Ready state from the Running state, and thread t2 starts executing.
+Then t2 goes in Ready state because yield() is called on it.
+Now, thread t1 resumes its execution and terminates. The execution of the second thread follows this because it was in a Ready state.
