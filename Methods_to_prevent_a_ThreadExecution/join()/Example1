@@ -2,6 +2,72 @@
 class Mythread extends Thread{
 	@Override
 	public void run() {
+		for(int i = 1; i<=5; i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(i);
+			
+//			
+		}
+	
+	}
+}
+ 
+public class join_preventException{
+	
+	
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Mythread t1 = new Mythread();
+		Mythread t2 = new Mythread();
+		Mythread t3 = new Mythread();
+		
+		
+	
+		t1.start();
+		t1.join();
+		t2.start();
+		t3.start();
+		
+		
+
+	}
+
+}
+o/p:-
+1
+2
+3
+4
+5---until here other thread will wait
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+
+
+
+
+
+
+
+Ex2>-
+
+
+class Mythread extends Thread{
+	@Override
+	public void run() {
 		for(int i = 0; i<5; i++) {
 			try {
 				Thread.sleep(1000);
