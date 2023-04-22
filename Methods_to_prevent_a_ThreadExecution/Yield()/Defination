@@ -1,3 +1,31 @@
 The yield() method of thread class causes the currently 
 executing thread object to temporarily pause and allow other threads to execute of 
 same priority.
+
+
+
+** Drawbacks:- But there is some problem with this method that, some OS doesnot provide good support to this method so 
+even if we restrict the thread it may sometime executes the same thread without giving other thread a chance to execute
+
+
+
+new/Born ---> Read/Runnable ----> Running ---->Dead/Terminate
+                  ^                  |
+                  |__________________| 
+                     Thread.yield();
+                     From Running to Ready/Runnable state
+                     
+                     
+ Let say there are 3 Thread T1, T2, and T3 where T1 executes first while T2 and T3 are
+ at ready/runnable state. The Time required for completion of one thread T1 takes 4hr
+ where T2 takes 2min and T3 takes 4Min . so here as we can see T2 and T3 and have to wait 
+ for 4hrs to complete to complete 6min work. So in such senarios we need have other threads
+ get execute if they are lot important where yield() method provide such functionality.
+ 
+ 
+ As Thread executed at running state so running state have high priority than running/executing thread
+ so running state declare yield for current running/executing Thread and Thread scheduler stops
+ the current running Thread send it back to Ready/Runnable state and give other thread with equal or high priority a chance to
+ execute
+       And this process continues until Thread comes to Terminate/Dead state
+ 
