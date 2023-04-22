@@ -1,0 +1,43 @@
+//If several waiting Threads have same priority the we can't excpect or predict 
+to which thread will get chnace to start executing.
+
+
+
+class MyThread1 extends Thread{
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("Started "+Thread.currentThread());
+		Thread.yield();
+		
+		System.out.println("Ended "+Thread.currentThread());
+	}
+}
+
+
+public class yield_preventExecution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyThread1 t1 = new MyThread1();
+		MyThread1 t2 = new MyThread1();
+		
+		
+		t1.start();
+		t2.start();
+		
+	}
+
+}
+
+o/p:-
+Started Thread[Thread-1,5,main]
+Started Thread[Thread-0,5,main]
+Ended Thread[Thread-1,5,main]          // thread-1 start first and after yield() its ends first
+Ended Thread[Thread-0,5,main]
+
+o/p:-
+Started Thread[Thread-0,5,main]
+Started Thread[Thread-1,5,main]      // Thread-2 start first and after yield() it ends last
+Ended Thread[Thread-1,5,main]
+Ended Thread[Thread-0,5,main]
