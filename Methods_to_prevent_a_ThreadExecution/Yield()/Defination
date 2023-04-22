@@ -1,0 +1,3 @@
+The yield() method of thread class causes the currently 
+executing thread object to temporarily pause and allow other threads to execute of 
+same priority.
