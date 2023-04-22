@@ -1,0 +1,12 @@
+Join() is Thread class method, if this method invoke, the current Thread stops its
+execution and the thread goes into the wait state until the thread on which the join()
+method is invoked has achieved it dead/terminate state or wait for the specific time 
+mention in join() method argument.
+
+
+
+There are 3 overloaded methods in join()
+1) public void final join() throws InterruptedException
+2) public void final join(long milliseconds) throws InterruptedException
+3) public void final join(long milliseconds, nanoseconds) throws InterruptedException
+   
