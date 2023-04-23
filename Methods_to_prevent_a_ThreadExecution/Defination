@@ -1,0 +1,13 @@
+The interrupt() method of thread class is used to interrupt the thread. If any thread is in sleeping or waiting state (i.e. sleep() or wait() is invoked) 
+then using the interrupt() method, we can interrupt the thread execution by throwing InterruptedException.
+
+-Whenever we are calling interrupt() method we may not see the effect
+immediately, if the target Thread is in sleeping or waiting state it will be
+interrupted immediately.
+
+-If the target Thread is not in sleeping or waiting state then interrupt call will
+wait until target Thread will enter into sleeping or waiting state. Once target
+Thread entered into sleeping or waiting state it will effect immediately.
+
+-In its lifetime if the target Thread never entered into sleeping or waiting state
+then there is no impact of interrupt call simply interrupt call will be wasted.
