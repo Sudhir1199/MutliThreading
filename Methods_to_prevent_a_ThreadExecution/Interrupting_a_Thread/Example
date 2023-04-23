@@ -48,3 +48,9 @@ java.lang.InterruptedException: sleep interrupted
 got interrupted
 
 
+so what happen here:-
+
+In the above program interrupt() method call invoked by main Thread will wait
+until child Thread entered into sleeping state.
+Once child Thread entered into sleeping state then it will be interrupted
+immediately.
