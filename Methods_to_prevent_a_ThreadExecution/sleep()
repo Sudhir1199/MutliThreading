@@ -1,0 +1,31 @@
+If a Thread don't want to perform any operation for a particular duration
+of time then we should go for sleep() method
+
+Overloaded methods of sleep:-
+public static void sleep(long ms) throws InterruptedException
+public static void sleep(long ms, long ns) throws InterruptedException
+
+
+
+
+
+
+
+new/born ---->runnable/ready ------>Running ----->dead/Terminated
+                ^                       |
+                |                       |Thread.sleep(2000)
+ |--------------|                       |Thread.sleep(1000,5688)
+ |              |                       |
+ |              |_______________________*                       
+ |                      SLEEPING---->Thread went to sleeping state 
+ |                        state
+ |
+ 1) if time expires
+ 2) if sleeping Thread got Interrupted
+ 
+ so here at the time of current thread executing or running, when we invoke Thread.sleep()
+ method that current Thread running state will change by Thread scheduler and went into 
+ sleep state and after given amount to time expire or if sleeping thread got interrupted 
+ then it will goes to ready/runnable state and waiting for its chance of getting execution.
+ 
+ 
