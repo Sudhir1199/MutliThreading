@@ -1,3 +1,6 @@
+r.run():-
+
+
 No new Thread will be created and MyRunnable class run() method will be executed 
 just like a normal method call. 
 As we know Runnable interface have only one method which is run() method
