@@ -7,10 +7,13 @@ Case study:-
               
  // No new Thread will be created but Thread class run() method will be executed just like 
  // normal method call
- //as thread class contains empty implementation and new "new Thread()" dont
+ //as thread class contains empty implementation and "new Thread()" dont
  //have target element or argument to invoke overrridden run() method inside class
  //MyRunnable so after the execution of empty implemented Thread class run() method it 
  //will continue its execution further in main method
+ 
+ 
+ //** Target element is argument space inside t.run() method which takes argumen or target element of Class which extends Runnable
  
  
  
