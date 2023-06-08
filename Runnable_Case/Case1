@@ -5,7 +5,7 @@ Case Study:-
            
            t1.start();
 // A new Thread will be created which is resposible for the execution of Thread class 
-//run() method but as run() method have empty implementation so after executing of 
+//run() method but as run() method have empty implementation cos MyRunnable class object is not assign in Thread so after executing of 
 //run()--->{without any implemetation} with help of t1.start() method call, i
 // it will continue its execution inside further codes in main method.
 
