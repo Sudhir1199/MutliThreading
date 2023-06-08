@@ -2,6 +2,9 @@
 //newly created thread. SO, if we override start() method, run() method will not called
 //until we write code for run() method.
 
+//as we know the start() method defination comes from run() method with newly created thread so if we define start() method then it won't go for run method as 
+//it defination or method is  already defined.
+
 //  so if we override start() method  then out start() method will be executed just like a normal
 //method call without creating any new Thread.
 
