@@ -1,0 +1,73 @@
+
+why giving different output, why not 2000 
+cos--> count = 5---> so here both t1 and t2 try to increment 5 at same time which we dont want, like if it do increment same 
+time then it will be ------->
+                           Thread t1 ---> 5(increment)--> 6
+                           Thread t2 ---> 5(increment)--> 6
+                           if program keep incrementing like this then it won't give accurate result which is 2000 and 
+                           loop will get over .
+                           so here we want that until to make one thread execute that increment() resource till the end , it like 
+                           a lock where until it end t2 thread can't access the shared resource.
+
+
+
+
+
+class Counter{
+	
+	int count = 0;
+	public void increment() {
+		count++;
+	}
+}
+public class Plsyer {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Counter c = new Counter();
+		
+		Thread t1 = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				for(int i = 0; i<1000; i++) {
+					c.increment();
+					
+					
+				}
+				
+			}
+		});
+		
+		Thread t2 = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				for(int i = 0; i<1000; i++) {
+					c.increment();
+				}
+				
+			}
+		});
+		
+		t1.start();
+		t2.start();
+		
+		t1.join();
+		t2.join();
+		System.out.println(c.count);
+//		
+		
+		
+		
+
+	}
+
+}
+
+
+o/p:- 1848
+      1779
+      1788
