@@ -1,0 +1,4 @@
+Synchronization in java is the capability to control the access of multiple threads to any shared
+resource. In Multithreading concept, multiple threads try to access the shared resources at a time 
+to produce inconsistent results. The synchronization is necessary for reliable communication between
+threads.
