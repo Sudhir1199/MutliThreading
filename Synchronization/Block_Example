@@ -1,0 +1,57 @@
+class msg
+{
+	public void show(String name)
+	{
+		
+		synchronized (this) {
+			for(int i = 0; i<=3; i++) {
+				System.out.println(name);
+			}
+			
+		}
+	}
+}
+
+class MyThread extends Thread{
+	
+	msg m;//we need its method that why initializing it here with constructor
+	String name;
+	public MyThread(msg m, String name) {
+		super();
+		this.m = m;
+		this.name = name;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		m.show(name);
+	}
+}
+public class syncc1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		msg m = new msg();
+		MyThread t1 = new MyThread(m, "Sudhir");
+		MyThread t2 = new MyThread(m, "Sohan");
+		
+		t1.start();
+		t2.start();
+
+	}
+
+}
+
+
+
+o/p:-
+Sudhir
+Sudhir
+Sudhir
+Sudhir
+Sohan
+Sohan
+Sohan
+Sohan
+
