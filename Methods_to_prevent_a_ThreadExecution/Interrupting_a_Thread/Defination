@@ -1,5 +1,5 @@
 The interrupt() method of thread class is used to interrupt the thread. if any thread 
-is in sleeping or waiting state (i.e sleep() or wait() is invoked) then usind interrupt()
+is in sleeping or waiting state (i.e sleep() or wait() is invoked) then using interrupt()
 method, we can interrupt the thread execution by throwing InterruptedExecution.
 
 
