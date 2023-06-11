@@ -1,0 +1,86 @@
+BEFORE synchronized wait(), notify() and notifyAll():----------
+
+class TotalEarning extends Thread{
+	int total = 0;
+	@Override
+	public void run() {
+		
+		for(int i = 0 ; i<10; i++) {
+			total =  total + 10;
+		}
+		
+	
+	}
+}
+public class waittttttttttt {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		TotalEarning t = new TotalEarning();
+		t.start();
+		
+		
+		System.out.println("Total earning "+t.total);
+
+	}
+
+}
+
+
+o/p:- Total earning 0;
+
+the above code giving 0 cos when we input t.start it invokes another thread with main thread means -----> total 2 thread are there
+currently , in which newly created thread executes run() method cos as we know when we call start method it internally calls 
+thread class run() method so while newly created thread execting run() which is for sure takes long time as it have to go through
+loops and keep on adding, so in those mean time main thread executes 'print' statement and end the program which gives us result
+as "Total earning 0".
+
+
+AFTER synchronized wait(), notify() and notifyAll():----------
+
+
+
+class TotalEarning extends Thread{
+	int total = 0;
+	@Override
+	public void run() {
+		
+		synchronized (this) {
+			
+			for(int i = 0 ; i<10; i++) {
+				total =  total + 100;
+			}
+			this.notify();	
+			
+		}
+	}
+}
+public class waittttttttttt {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		TotalEarning t = new TotalEarning();
+		t.start();
+		
+		synchronized (t) {
+			
+			t.wait();
+			System.out.println("Total earning "+t.total);
+			
+		}
+
+	}
+
+}
+
+o/p:- Total earning 1000
+
+here wait() statement should be inside synchronized block, so after t.wait --->main() thread will release the lock on 'object
+t' and went into waiting state and other thread executes their synchronized block and notify him or wake him so that 
+main() thread can executes its synchronized code.
+
+
+
+
