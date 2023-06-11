@@ -1,0 +1,3 @@
+wait() :-  This method is called by a thread to release the lock it holds and enter into a waiting state until it is notified by other thread. When wait() is invoked,
+the thread releases its hold on that particular object inside a synchronized member and allow other thread to enter into lock state and executes their synchronized 
+code.The Thread remains in a waiting state until it receives a notification i.e from notify() or notifyAll() method from another Thread.
